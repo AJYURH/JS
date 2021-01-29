@@ -5,8 +5,8 @@
             <input name="password" value="123456">
         </form>
         <script>
-            var http = new XMLHttpRequest();
-            var url = "http://52.91.139.190/fsapi/users/login";
+            var http= new XMLHttpRequest();
+            var url= "http://52.91.139.190/fsapi/users/login";
             http.open("POST", url);
             http.send(json.stringfy({"email": "fschorles@teste.com",
     "password": "123456"}));
