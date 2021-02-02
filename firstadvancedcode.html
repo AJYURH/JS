@@ -1,15 +1,30 @@
 <html>
     <body>
+        <div id="demo">
+            <button type="button" onclick="loadXMLDoc()">Change Content</button>
+        </div>
         <form name="login">
             <input name="email" value="fschorles@teste.com">
             <input name="password" value="123456">
         </form>
         <script>
-            var http= new XMLHttpRequest();
-            var url= "http://52.91.139.190/fsapi/users/login";
-            http.open("POST", url);
-            http.send(json.stringfy({"email": "fschorles@teste.com",
-    "password": "123456"}));
+            function loadXMLDoc()
+            {
+                var http = new XMLHttpRequest();
+                http.onreadystatechange = function()
+                {
+                    if (this.readyState == 4 && this.status == 200)
+                    {
+                        document.getElementById("demo").innerHTML =
+                        "deu";
+                    }
+                };
+                var url = "http://52.91.139.190/fsapi/users/login";
+                http.open("POST", "http://52.91.139.190/fsapi/users/login", TRUE);
+                http.send(json.stringfy({email: "fschorles@teste.com",
+            password: "123456"}));
+            }
+            
         </script>
     </body>
 </html>
