@@ -1,0 +1,58 @@
+<html>
+    <body>
+
+        <script>
+            function age(birthYear, birthMonth, birthDay) 
+            {
+                var date = new Date,
+                anohj = date.getFullYear(),
+                meshj = date.getMonth() + 1,
+                diahj = date.getDate(),
+
+                birthYear = +birthYear,
+                birthMonth = +birthMonth,
+                birthDay = +birthDay,
+
+                age = anohj - birthYear;
+
+                if(birthYear>date.getFullYear | birthMonth >12 | birthMonth<1|birthDay>31|birthDay<1)
+                {
+                    return "Erro"
+                }
+                if (meshj < birthMonth ||meshj == birthMonth && diahj < birthDay) 
+                {
+                    age--;
+                }
+
+                if (age >=18)
+                {
+                    return "Maior de Idade";
+                }
+                else if(age < 0)
+                {
+                    return "Erro";
+                }
+                else
+                {
+                    return "Menor de Idade";
+                }
+            }
+
+
+
+        console.log(age(2007,02 ,02 )); //  33
+
+        console.log(age(2007,02 ,02 )); //  33
+
+        console.log(age(1994, 15, 28));  // 2
+
+        console.log(age(2023, 12, 25));  // 20
+
+        console.log(age(1994, 04, 28));  // 2
+
+        console.log(age(1992, 12, -5));  // 20
+
+        </script>
+        fun
+    </body>
+</html>
