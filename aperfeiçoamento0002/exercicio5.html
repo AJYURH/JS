@@ -1,0 +1,38 @@
+<html>
+    <body>
+        Insira 5 Numero sem espaços<br>
+        <input type = "text" name ="box1" id="digits" value ="2"  oninput=media() maxlength="5" > </input><br>
+        Média
+        <div id = "media">
+            <input type = "text" id = "media1" value = "1" name = "media1" readonly ></input>
+        </div>
+        <script>
+            var array = new Array(5) ;
+            var i=0;
+            var temp =0;
+            var str ="";
+            function media () 
+            {              
+                str = document.getElementById('digits').value;  
+                temp = 0;
+                for(i=0 ; i<=5; i++)
+                {
+                    if(str.charAt(i)!="")
+                    {
+                        console.log(str.charAt(i))
+                        array[i]=str.charAt(i);
+                        console.log(temp)
+                        temp = parseInt(temp)+parseInt(array[i]);
+                        document.getElementById('media1').value = temp/5;
+                    }
+                   
+                }
+                
+            }
+            //document.getElementById("media").value = document.getElementById("5digits").value;
+            //console.log(document.getElementById("5digits").value);
+            //function media()
+        </script>
+        
+    </body>
+</html>
